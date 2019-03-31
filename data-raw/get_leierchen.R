@@ -25,5 +25,7 @@ text_list <- map(merged_list, ~ocr(., engine = "nld"))
 text_list <- text_list %>%
     map(., ~str_split(., "\n"))
 
-text_list %>%
-    unlist %>% View
+dleierchen <- text_list %>%
+    unlist
+
+saveRDS(dleierchen, "data-raw/dleierchen.rds")
