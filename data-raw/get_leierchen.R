@@ -28,4 +28,6 @@ text_list <- text_list %>%
 dleierchen <- text_list %>%
     unlist
 
+write_lines(dleierchen, "data-raw/dleierchen.txt")
+
 saveRDS(dleierchen, "data-raw/dleierchen.rds")
