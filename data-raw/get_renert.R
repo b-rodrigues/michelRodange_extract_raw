@@ -13,6 +13,9 @@ renert_raw <- renert_link %>%
     str_split("\n", simplify = TRUE) %>%
     .[1, -c(1:21)]
 
+write_lines(renert_raw, "data-raw/renert_raw.txt")
+
+
 (indices <- grepl("Gesank", renert_raw) %>% which(isTRUE(.)))
 
 (indices2 <- c(indices[-1] - 1, length(renert_raw)))
